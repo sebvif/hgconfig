@@ -1,4 +1,7 @@
+#propios
 scripts_auxiliares/configs/*
+*~
+*#
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
