@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Estos son los equipos que se van a configurar:</p>
+{% if devices %}
+<ul>
+	{% for device in devices %}
+	<li>{{ device }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>{{ form.submit() }}</p>
+
+{% endblock %}

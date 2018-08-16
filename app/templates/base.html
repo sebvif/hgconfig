@@ -1,0 +1,27 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - HG659 Config</title>
+    {% else %}
+    <title>HG659</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>
+      HG659 Config: 
+      <a href="{{ url_for('configure') }}">Configura</a> 
+      <a href="{{ url_for('verify') }}">Verifica</a>
+    </div>
+    <br>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}    
+    {% block content %}{% endblock %}
+  </body>
+</html>

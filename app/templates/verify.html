@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Utiliza esta pantalla para revisar la útlima configuración de un equipo. Ingresa el número de serie del equipo o la localidad a la que pertenece para obtener la información.</p>
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.serial.label }}<br>
+    {{ form.serial(size=32) }}
+  </p>
+  <p>{{ form.submit() }}</p>
+  
+
+
+
+{% endblock %}

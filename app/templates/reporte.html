@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if devices_ok_config %}
+<p>Estos equipos se configuraron correctamente:</p>
+<ul>
+	{% for key in devices_ok_config %}
+	<li>{{ key }}</li>
+	<ul>
+		{% for value in devices_ok_config[key] %}
+		<li>{{ value }}</li>
+		{% endfor %}
+	</ul>
+	{% endfor %}
+</ul>
+<br>
+{% endif %}
+
+{% if devices_fail %}
+<p>Estos equipos no se configuraron:</p>
+<ul>
+	{% for device in devices_fail %}
+	<li>{{ device }}</li>
+	{% endfor %}
+</ul>
+<p>Se sugiere regresar a valores de fabrica e intentar nuevamente.</p>
+<br>
+{% endif %}
+
+{% if devices_no_config %}
+<p>Estos equipos no tienen asignada niguna configuracion:</p>
+<ul>
+	{% for device in devices_no_config %}
+	<li>{{ device }}</li>
+	{% endfor %}
+</ul>
+<p>Se sugiere revisar la base de datos.</p>
+{% endif %}
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>{{ form.submit() }}</p>
+  
+{% endblock %}

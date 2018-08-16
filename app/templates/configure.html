@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Utiliza esta pantalla para configurar. Conecta el equpo a la interfaz ethernet de tu computadora y da click en el siguiente botón</p>
+<br>
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}
